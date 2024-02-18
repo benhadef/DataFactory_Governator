@@ -1,0 +1,9 @@
+{
+	"name": "GovernatorADF",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "177e99f0-4614-496e-932c-c345c79a63ac",
+		"tenantId": "023823b2-589f-47b4-b409-145e4ddb54da"
+	}
+}
