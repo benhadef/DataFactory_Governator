@@ -1,0 +1,15 @@
+{
+	"name": "RestResource4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestService2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "activityevents?startDateTime='2024-02-18T08:55:00.000Z'&endDateTime='2024-02-18T08:55:00.000Z'"
+		},
+		"schema": []
+	}
+}
