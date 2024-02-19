@@ -95,7 +95,7 @@
 				]
 			},
 			{
-				"name": "Copy Workspaces",
+				"name": "Get Workspaces",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
