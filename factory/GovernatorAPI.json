@@ -1,0 +1,9 @@
+{
+	"name": "GovernatorAPI",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7a5da079-4341-467b-836b-6794323d2ed5",
+		"tenantId": "65651bd5-0bb9-4fcb-a000-e7c839bb8d69"
+	}
+}
