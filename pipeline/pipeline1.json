@@ -5,6 +5,8 @@
 			{
 				"name": "Get Datasets",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -51,6 +53,8 @@
 			{
 				"name": "Get Reports",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -97,6 +101,8 @@
 			{
 				"name": "Get Workspaces",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -143,6 +149,8 @@
 			{
 				"name": "Get ActivityEvents",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -185,8 +193,71 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "WorkspaceID",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Lookup1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "workspaceID",
+					"value": {
+						"value": "@activity('Lookup1').output.value[0].id",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Lookup1",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"fileListPath": "worskpaces/data_12e023e0-991c-49ab-a375-6651f2b5b32b_69c9bf18-50bc-4b1a-a17c-e4e17828f350.json",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"dataset": {
+						"referenceName": "Json3",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
 			}
 		],
+		"variables": {
+			"workspaceID": {
+				"type": "String"
+			},
+			"arrayWorkspaceID": {
+				"type": "Array"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2024-02-18T18:56:56Z"
 	},
