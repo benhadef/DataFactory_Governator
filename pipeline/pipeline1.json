@@ -213,7 +213,7 @@
 				"typeProperties": {
 					"variableName": "workspaceID",
 					"value": {
-						"value": "@activity('Lookup1').output.value[0].id",
+						"value": "@string(activity('Lookup1').output.value[0].value[0].id)",
 						"type": "Expression"
 					}
 				}
@@ -235,7 +235,7 @@
 						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"fileListPath": "worskpaces/data_12e023e0-991c-49ab-a375-6651f2b5b32b_69c9bf18-50bc-4b1a-a17c-e4e17828f350.json",
+							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -243,7 +243,7 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "Json3",
+						"referenceName": "Json5",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false

@@ -1,0 +1,19 @@
+{
+	"name": "Json5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "data_12e023e0-991c-49ab-a375-6651f2b5b32b_69c9bf18-50bc-4b1a-a17c-e4e17828f350.json",
+				"container": "worskpaces"
+			}
+		},
+		"schema": {}
+	}
+}
